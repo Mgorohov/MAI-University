@@ -31,6 +31,14 @@ int circle(int x, int y){
         return point;
 }
 
+int check_zone(int x, int y){
+        if ((circle(x, y) <= 100) && (circle(x, y) >= 25))
+                return 1;
+        else
+                return 0;
+}
+
+
 int main(){
         const int i0 = -1, j0 = -1, l0 = -9;// m = 50;
 	double start, end;
@@ -43,7 +51,7 @@ int main(){
                 I[k] = max(J[k - 1] - k - 1, L[k - 1] - k - 1) % 30 + max(I[k - 1] +L[k - 1], J[k - 1] + k -1) % 20;
                 J[k] = (abs(I[k - 1] - L[k - 1]) * sign(J[k - 1] + k - 1) + abs(I[k -1] -k - 1) * (J[k - 1] + k - 1)) % 20;
                 L[k] = (I[k - 1] + k - 1) * (J[k - 1] - k - 1) * (L[k - 1] + k - 1) % 25;
-                if ((circle(I[k], J[k]) <= 100) && (circle(I[k], J[k]) >= 25)){
+                if (check_zone(I[k], J[k]) == 1){
 			end = time(NULL);
                         printf("Point is in of scope at step %d\n", k);
 			printf("The points coordinates: (%d; %d)\n", I[k], J[k]);
