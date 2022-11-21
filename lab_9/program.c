@@ -5,24 +5,33 @@
 # define m 50
 
 int abs(int n){
-        if (n > 0)
+        if (n > 0){
                 return n;
-        else
+	}
+        else{
                 return -n;
+	}
 }
 
 int max(int n1, int n2){
-        if (n1 > n2)
+        if (n1 > n2){
                 return n1;
-        else
+	}
+        else{
                 return n2;
+	}
 }
 
 int sign(int n){
-        if (n > 0)
+        if (n > 0){
                 return 1;
-        else
+	}
+        else if (n < 0){
                 return -1;
+	}
+	else{
+		return 0;
+	}
 }
 
 int circle(int x, int y){
@@ -32,10 +41,12 @@ int circle(int x, int y){
 }
 
 int check_zone(int x, int y){
-        if ((circle(x, y) <= 100) && (circle(x, y) >= 25))
+        if ((circle(x, y) <= 100) && (circle(x, y) >= 25)){
                 return 1;
-        else
+	}
+        else{
                 return 0;
+	}
 }
 
 
