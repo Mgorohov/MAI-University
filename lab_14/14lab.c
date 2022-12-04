@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 int main() {
-	int n, p, matrix[100][100];
+	int n, p, matrix[100][100] = {0};
 	printf("Enter size of matrix: ");
 	scanf("%d", &n);
 	while (n <= 0) {
