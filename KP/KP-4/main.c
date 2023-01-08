@@ -4,8 +4,8 @@
 
 
 long double derive(long double (*f)(long double), long double x){
-    long double prib = 1e-6;
-    long double ans = (f(x + prib) - f(x)) / prib;
+    long double inf = 1e-6;
+    long double ans = (f(x + inf) - f(x)) / inf;
     return ans;
 }
 
